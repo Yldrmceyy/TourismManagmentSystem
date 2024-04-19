@@ -1,4 +1,4 @@
-﻿﻿# Tourism Agency Management System
+﻿# Tourism Agency Management System
 This project encompasses a Java application developed to manage tourism agency operations. The project consists of five main packages: DAO (Data Access Object), Business, Entity, Core, and View.
 
 # About the project
