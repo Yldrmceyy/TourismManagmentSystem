@@ -21,6 +21,7 @@ Update and delete reservation information.
 Add new users and view existing ones.
 Update and delete user information.
 Assign "admin" and "employee" roles to users.
+
 ## Example Use Cases
 Adding a New Hotel: Click the "Add Hotel" button on the main screen to add a new hotel. Visit the "Hotel List" tab to see the added hotels.
 
@@ -34,6 +35,7 @@ Reservation Update/Delete: In the "Reservations" tab, you can view, update, or d
 
 ## Project Structure
 The project is comprised of five main packages:
+
 ## Project File Directory
   ```sh 
 TourismAgency/
