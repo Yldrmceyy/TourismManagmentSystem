@@ -1,7 +1,7 @@
 package business;
 
 import core.Helper;
-import Dao.PensionDao;
+import dao.PensionDao;
 import entity.Hotel;
 import entity.Pension;
 

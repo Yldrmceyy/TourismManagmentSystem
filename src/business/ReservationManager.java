@@ -1,7 +1,7 @@
 package business;
 
-import Dao.ReservationDao;
-import Dao.RoomDao;
+import dao.ReservationDao;
+import dao.RoomDao;
 import core.Db;
 import core.Helper;
 import entity.*;

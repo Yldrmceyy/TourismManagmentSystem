@@ -1,8 +1,8 @@
 package view;
 
-import Dao.HotelDao;
-import Dao.ReservationDao;
-import Dao.RoomDao;
+import dao.HotelDao;
+import dao.ReservationDao;
+import dao.RoomDao;
 import business.*;
 import core.Helper;
 import entity.Hotel;

@@ -1,6 +1,6 @@
 package business;
 
-import Dao.UserDao;
+import dao.UserDao;
 import entity.User;
 
 import java.util.ArrayList;

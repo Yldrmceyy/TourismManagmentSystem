@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 import core.Db;
 import entity.Hotel;

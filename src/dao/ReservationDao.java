@@ -1,10 +1,7 @@
-package Dao;
+package dao;
 
 import core.Db;
-import entity.Hotel;
 import entity.Reservation;
-import entity.Room;
-import entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

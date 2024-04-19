@@ -1,13 +1,12 @@
 package business;
 
-import Dao.SeasonDao;
+import dao.SeasonDao;
 import core.Helper;
 import entity.Hotel;
 import entity.Season;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class SeasonManager {
     private final SeasonDao seasonDao;

@@ -1,6 +1,6 @@
 package business;
 
-import Dao.HotelDao;
+import dao.HotelDao;
 import core.Helper;
 import entity.Hotel;
 
