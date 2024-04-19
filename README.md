@@ -1,5 +1,5 @@
-﻿﻿# Tourism Agency Management System
-This project encompasses a Java application developed to manage tourism agency operations. The project consists of five main packages: DAO (Data Access Object), Business, Entity, Core, and View.
+﻿# Tourism Agency Management System
+ This project encompasses a Java application developed to manage tourism agency operations. The project consists of five main packages: DAO (Data Access Object), Business, Entity, Core, and View.
 
 # About the project
 The tourism agency project is a comprehensive application that offers a wide range of services, including hotel management, room reservations, customer information, and user management. This project involves adding hotels, managing rooms, making reservations, and updating customer information. Additionally, it allows the creation of users in different roles (admin and employee), enabling more effective management of business processes. As a result, the tourism agency project facilitates travel and accommodation processes, providing services in accordance with industry standards.
@@ -34,30 +34,12 @@ Reservation Update/Delete: In the "Reservations" tab, you can view, update, or d
 
 ## Project Structure
 The project is comprised of five main packages:
-## Project File Directory
-  ```sh 
-TourismAgency/
-|
-├── business/       ---> Classes containing business logic operations.
-│    └──
-│ 
-├── core/          ---> Fundamental helper classes and tools.
-│    └── (...)
-│
-├── dao/            ---> Data Access Objects managing database operations.
-│    └── (...)
-│
-├── entity/          ---> Entity classes representing database tables.
-|     └── (...)
-|
-├── view/            ---> Classes containing User Interface (UI) components
-|     └── (...)
-|
-├── App
-|
-└── README.md
-   ````
 
+dao: Data Access Objects managing database operations.
+business: Classes containing business logic operations.
+entity: Entity classes representing database tables.
+core: Fundamental helper classes and tools.
+view: Classes containing User Interface (UI) components.
 ## Requirements
-- Java JDK 19
-- PostgreSQL database
+Java JDK 8 or above
+PostgreSQL database
