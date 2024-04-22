@@ -157,6 +157,37 @@ public class EmployeeView extends Layout {
             // Sezon tablosunu günceller.
             loadSeasonTable(null);
         });
+
+        // "Sil" işlevini içeren bir ActionListener eklenir.**
+        hotelMenu.add("Otel Sil").addActionListener(e -> {
+
+            // Kullanıcıya emin olup olmadığını soran bir onay penceresi gösterilir.
+            if (Helper.confirm("sure")) {
+
+                // Seçilen kullanıcının ID'si alınır.
+                int selectHotelId = this.getTableSelectedRow(tbl_hotel, 0);
+
+                // Kullanıcı ID'sine göre kullanıcı silinir.
+                if (this.hotelManager.delete(selectHotelId)) {
+
+                    // Başarılı bir şekilde silindiğinde kullanıcıya mesaj gösterilir.
+                    Helper.showMsg("done");
+
+                    loadHotelTable(null);
+                    loadPencionTable(null);
+                    loadSeasonTable(null);
+                    loadRoomTable(null);
+                    loadReservationTable(null);
+
+                } else {
+
+                    // Silme işlemi başarısızsa kullanıcıya hata mesajı gösterilir.
+                    Helper.showMsg("error");
+                }
+            }
+        });
+
+
         this.tbl_hotel.setComponentPopupMenu(hotelMenu);
         loadPencionTable(null);
         loadSeasonTable(null);
@@ -489,6 +520,8 @@ public class EmployeeView extends Layout {
         });
 
     }
+
+
 
     // JFormattedTextField bileşenleri oluşturuluyor.
     private void createUIComponents() throws ParseException {

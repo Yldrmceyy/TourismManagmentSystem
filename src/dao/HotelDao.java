@@ -113,4 +113,17 @@ public class HotelDao {
 
     }
 
+    // Belirli bir oteli ID ile silen metot//
+    public boolean delete(int id) {
+        String query = "DELETE FROM public.hotel WHERE id = ?";
+        try {
+            PreparedStatement pr = this.con.prepareStatement(query);
+            pr.setInt(1, id);
+            return pr.executeUpdate() != -1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
 }
+

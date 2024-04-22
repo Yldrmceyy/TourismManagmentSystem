@@ -142,7 +142,7 @@ public class ReservationAddView extends Layout {
                     boolean result = true;
                     reservation.setReservation_room_id(room.getRoom_id());
                     reservation.setReservation_guest_name(fld_guestName.getText());
-                    reservation.setReservation_guest_id(Integer.parseInt(String.valueOf(fld_guestID.getText())));
+                    reservation.setReservation_guest_id(Integer.parseInt((String.valueOf(fld_guestID.getText()))));
                     reservation.setReservation_mail(fld_guestMail.getText());
                     reservation.setReservation_phone((Integer.parseInt(String.valueOf(fld_guestPhone.getText()))));
                     reservation.setReservation_start_date(LocalDate.parse(startDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
@@ -161,6 +161,7 @@ public class ReservationAddView extends Layout {
                         room.setRoom_stock(room.getRoom_stock() - 1);
                         roomManager.updateStock(room);
                         dispose();
+
                     }
                     if (result) {
                         Helper.showMsg("done");

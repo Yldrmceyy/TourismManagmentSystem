@@ -110,7 +110,6 @@ public class RoomAddView extends Layout {
                 } else {
 
                 }
-
                 if (result) {
                     Helper.showMsg("done");
 
