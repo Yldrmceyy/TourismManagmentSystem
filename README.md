@@ -1,8 +1,27 @@
-﻿# Tourism Agency Management Syste
+# Tourism Managament System
 This project encompasses a Java application developed to manage tourism agency operations. The project consists of five main packages: DAO (Data Access Object), Business, Entity, Core, and View.
 
-# About the project
+## About the project
 The tourism agency project is a comprehensive application that offers a wide range of services, including hotel management, room reservations, customer information, and user management. This project involves adding hotels, managing rooms, making reservations, and updating customer information. Additionally, it allows the creation of users in different roles (admin and employee), enabling more effective management of business processes. As a result, the tourism agency project facilitates travel and accommodation processes, providing services in accordance with industry standards.
+
+
+## Used Technologies
+
+- __Java JDK 19__ :
+  Development of the project has been carried out using the Java programming language. Java was chosen for its platform independence and powerful object-oriented programming features.
+
+- __Swing (UI Library)__ :
+ Java Swing framework has been utilized for developing the user interface (UI). Swing offers a wide range of components for Java-based desktop applications.
+
+- __PostgreSQL__ :
+ PostgreSQL has been chosen as the database management system. PostgreSQL provides a reliable, open-source, and scalable relational database management system. The project stores customer information, hotel, and reservation data in a PostgreSQL database.
+
+- __JDBC (Java Database Connectivity)__ :
+ JDBC, a standard API for accessing databases in Java applications, has been employed. Through this API, the project connects to the PostgreSQL database and performs operations.
+
+- __IntelliJ IDEA__ :
+IntelliJ IDEA has been used for the development and management of the project. IntelliJ IDEA is an integrated development environment that facilitates Java development and enhances productivity.
+
 
 # Features
 
