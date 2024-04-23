@@ -1,6 +1,7 @@
 # Tourism Managament System
 This project encompasses a Java application developed to manage tourism agency operations. The project consists of five main packages: DAO (Data Access Object), Business, Entity, Core, and View.
 
+
 ## About the project
 The tourism agency project is a comprehensive application that offers a wide range of services, including hotel management, room reservations, customer information, and user management. This project involves adding hotels, managing rooms, making reservations, and updating customer information. Additionally, it allows the creation of users in different roles (admin and employee), enabling more effective management of business processes. As a result, the tourism agency project facilitates travel and accommodation processes, providing services in accordance with industry standards.
 
@@ -41,6 +42,8 @@ Add new users and view existing ones.
 Update and delete user information.
 Assign "admin" and "employee" roles to users.
 
+
+
 ## Example Use Cases
 Adding a New Hotel: Click the "Add Hotel" button on the main screen to add a new hotel. Visit the "Hotel List" tab to see the added hotels.
 
@@ -52,8 +55,12 @@ User Creation: Create a new user from the "Users" tab and assign either an "admi
 
 Reservation Update/Delete: In the "Reservations" tab, you can view, update, or delete existing reservations.
 
+
+
 ## Project Structure
 The project is comprised of five main packages:
+
+
 
 ## Project File Directory
   ```sh 
@@ -79,8 +86,11 @@ TourismAgency/
 └── README.md
    ````
 
+
 ## Project Promotional Video
 https://www.youtube.com/watch?v=MCWyehN0A_E
+
+
 
 ## Requirements
 - Java JDK 19
