@@ -79,8 +79,8 @@ TourismAgency/
 └── README.md
    ````
 
-## Project Structure
-The project is comprised of five main packages:
+## Project Promotional Video
+https://www.youtube.com/watch?v=MCWyehN0A_E
 
 ## Requirements
 - Java JDK 19
