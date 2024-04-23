@@ -79,6 +79,9 @@ TourismAgency/
 └── README.md
    ````
 
+## Project Structure
+The project is comprised of five main packages:
+
 ## Requirements
 - Java JDK 19
 - PostgreSQL database
