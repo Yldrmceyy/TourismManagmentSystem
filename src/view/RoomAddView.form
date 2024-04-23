@@ -29,15 +29,15 @@
                   <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Projeksiyon"/>
+                  <text value="Kasa"/>
                 </properties>
               </component>
               <component id="db649" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Kasa"/>
+                  <text value="Projeksiyon"/>
                 </properties>
               </component>
               <component id="95763" class="javax.swing.JLabel">
@@ -120,7 +120,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="bb7ff" class="javax.swing.JRadioButton" binding="rdb_case_box_add">
+              <component id="bb7ff" class="javax.swing.JRadioButton" binding="rdb_projection_add">
                 <constraints>
                   <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -128,7 +128,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="dee6" class="javax.swing.JRadioButton" binding="rdb_projection_add">
+              <component id="dee6" class="javax.swing.JRadioButton" binding="rdb_case_box_add">
                 <constraints>
                   <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>

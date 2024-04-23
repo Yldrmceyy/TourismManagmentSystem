@@ -2,6 +2,9 @@ package core;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class Helper {
 
@@ -19,6 +22,8 @@ public class Helper {
             }
         }
     }
+
+
 
     // Kullanıcıya bilgi mesajları gösteren metod
     public static void showMsg(String str) {
@@ -97,4 +102,17 @@ public class Helper {
         UIManager.put("OptionPane.yesButtonText", "Evet");
         UIManager.put("OptionPane.noButtonText", "Hayır");
     }
+
+
+    public static boolean isValidDate(String inputDate, String formatPattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatPattern);
+
+        try {
+            LocalDate date = LocalDate.parse(inputDate, formatter);
+            return true; // Geçerli tarih formatı
+        } catch (DateTimeParseException e) {
+            return false; // Geçersiz tarih formatı
+        }
+    }
+
 }

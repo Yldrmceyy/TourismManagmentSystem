@@ -21,5 +21,7 @@ public class App {
         // Kullıcı girişi için kullanlır
         //EmployeeView employeeView = new EmployeeView(new User());
 
+
+
     }
 }

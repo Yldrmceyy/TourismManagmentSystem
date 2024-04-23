@@ -14,6 +14,7 @@ public class Room {
     private int room_square_meter;
     private boolean room_television;
     private boolean room_minibar;
+    private boolean room_case_box;//////////
     private boolean room_game_console;
     private boolean room_projection;
     private Hotel hotel;
@@ -161,6 +162,13 @@ public class Room {
         this.room_game_console = room_game_console;
     }
 
+    public boolean isRoom_case_box() {
+        return room_case_box;
+    }
+
+    public void setRoom_case_box(boolean room_case_box) {
+        this.room_case_box = room_case_box;
+    }
 
     public boolean isRoom_projection() {
         return room_projection;
@@ -187,8 +195,8 @@ public class Room {
                 ", room_minibar=" + room_minibar +
                 ", room_game_console=" + room_game_console +
                 ", room_projection=" + room_projection +
+                ", room_case_box=" + room_case_box +
                 '}';
+
     }
-
-
 }

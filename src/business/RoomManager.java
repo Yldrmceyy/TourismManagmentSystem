@@ -47,6 +47,7 @@ public class RoomManager {
             rowObject[i++] = obj.isRoom_minibar();
             rowObject[i++] = obj.isRoom_game_console();
             rowObject[i++] = obj.isRoom_projection();
+            rowObject[i++] = obj.isRoom_case_box();
             roomObjList.add(rowObject);
         }
         return roomObjList;
@@ -78,9 +79,7 @@ public class RoomManager {
         ArrayList<String> where = new ArrayList<>();
         ArrayList<String> joinWhere = new ArrayList<>();
 
-        // Tarih formatını uygun formata çevir
-        start_date = LocalDate.parse(start_date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString();
-        finish_date = LocalDate.parse(finish_date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString();
+
 
         // Otel adı şartı ekle
         if (hotel_name != null) {
@@ -104,9 +103,21 @@ public class RoomManager {
             }
         }
 
-        // Sezon tarihleri şartlarını ekle
-        where.add("(s.start_date <= '" + start_date + "')");
-        where.add("(s.finish_date >= '" + finish_date + "')");
+        // Tarih formatını uygun formata çevir
+
+
+        if (start_date != null && !start_date.isEmpty() && !start_date.equals("  /  /    ") && finish_date != null &&  !finish_date.isEmpty() && !finish_date.equals("  /  /    ")) {
+
+            // Tarihleri LocalDate olarak dönüştür
+            start_date = LocalDate.parse(start_date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString();
+            finish_date = LocalDate.parse(finish_date, DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString();
+
+            // Tarih aralığını WHERE koşuluna ekle
+            where.add("s.start_date <= '" + start_date + "'");
+            where.add("s.finish_date >= '" + finish_date + "'");
+        }
+
+
 
         // Oda stoğu kontrolü şartını ekle
         where.add("r.stock > 0");

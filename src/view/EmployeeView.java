@@ -15,6 +15,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.*;
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class EmployeeView extends Layout {
@@ -74,6 +77,8 @@ public class EmployeeView extends Layout {
     private RoomDao roomDao;
     private ReservationDao reservationDao;
     private ReservationAddView reservationAddView;
+    private LocalDate reservationStartDate;
+    private LocalDate reservationEndDate;
 
     // EmployeeView sınıfının constructor metodu
     public EmployeeView(User loginUser) {
@@ -199,6 +204,8 @@ public class EmployeeView extends Layout {
                 System.exit(0);
             }
         });
+        tbl_room_att.addComponentListener(new ComponentAdapter() {
+        });
     }
 
     public void loadHotelAddView(Object o) {
@@ -265,7 +272,7 @@ public class EmployeeView extends Layout {
     public void loadRoomTable(ArrayList<Object[]> roomListe) {
 
         // Oda tablosunun sütun başlıkları belirleniyor.
-        col_room = new Object[]{"Id", "Otel Adı", "Pansiyon", "Oda Tipi", "Stok", "Yetişkin Fiyat", "Çocuk Fiyat", "Yatak Kapasitesi", "m2", "Tv", "Minibar", "Konsol", "Kasa", "Projeksiyon"};
+        col_room = new Object[]{"Id", "Otel Adı", "Pansiyon", "Oda Tipi", "Stok", "Yetişkin Fiyat", "Çocuk Fiyat", "Yatak Kapasitesi", "m2", "Tv", "Minibar", "Konsol", "Projeksiyon", "Kasa"};
 
         // Eğer roomListe null ise, tüm odaları içeren bir liste oluşturuluyor.
         if (roomListe == null) {
@@ -480,15 +487,21 @@ public class EmployeeView extends Layout {
             // Formdaki metin alanlarından değerler alınıyor.
             String adultPriceText = (fld_hotel_adult.getText());
             String childPriceText = (fld_hotel_child.getText());
-            if (!isNumeric(adultPriceText)) {
-                // Eğer adultNumText bir sayı değilse, kullanıcıya bir hata mesajı göster
-                Helper.showMsg(adultPriceText + " Geçerli bir sayı değil.");
-                return; // Fonksiyonu burada sonlandır, çünkü devam etmek anlamsız olacaktır.
+
+
+            if (!childPriceText.isEmpty() && !adultPriceText.isEmpty()) {
+                if (!isNumeric(childPriceText)) {
+                    Helper.showMsg(childPriceText + " Geçerli bir sayı değil.");
+                    return;
+                }
+
+                if (!isNumeric(adultPriceText)) {
+                    // Eğer adultNumText bir sayı değilse, kullanıcıya bir hata mesajı göster
+                    Helper.showMsg(adultPriceText + " Geçerli bir sayı değil.");
+                    return; // Fonksiyonu burada sonlandır, çünkü devam etmek anlamsız olacaktır.
+                }
             }
-            if (!isNumeric(childPriceText)) {
-                Helper.showMsg(childPriceText + " Geçerli bir sayı değil.");
-                return;
-            }
+
 
             ArrayList<Room> roomList = this.roomManager.searchForRoom(
                     // Oda arama işlemi yapılıyor.
@@ -504,7 +517,17 @@ public class EmployeeView extends Layout {
 
             // Oda tablosu güncelleniyor.
             loadRoomTable(roomRow);
+
+            if (Helper.isValidDate(fld_hotel_strt_date.getText(), ("dd/MM/yyyy")) && Helper.isValidDate(fld_hotel_fnsh_date.getText(), ("dd/MM/yyyy"))) {
+                reservationStartDate = (LocalDate.parse(fld_hotel_strt_date.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                reservationEndDate = (LocalDate.parse(fld_hotel_fnsh_date.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+
+
+            } else {
+                Helper.showMsg("Geçersiz tarih girildi");
+            }
         });
+
 
         // Oda sıfırlama butonuna ActionListener ekleniyor.
         this.btn_room_reset.addActionListener(e -> {
@@ -519,8 +542,8 @@ public class EmployeeView extends Layout {
             loadRoomTable(null);
         });
 
-    }
 
+    }
 
 
     // JFormattedTextField bileşenleri oluşturuluyor.

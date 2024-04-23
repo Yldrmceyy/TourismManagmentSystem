@@ -44,7 +44,9 @@ public class RoomDao {
         obj.setRoom_television(rs.getBoolean("television"));
         obj.setRoom_minibar(rs.getBoolean("minibar"));
         obj.setRoom_game_console(rs.getBoolean("game_console"));
+
         obj.setRoom_projection(rs.getBoolean("projection"));
+        obj.setRoom_case_box(rs.getBoolean("safe"));///////
 
         // İlişkili DAO sınıflarını kullanarak ilgili nesneleri set et
         obj.setPencion(this.pencionDao.getById(rs.getInt("pension_id")));
@@ -69,9 +71,10 @@ public class RoomDao {
                 "television, " +
                 "minibar, " +
                 "game_console, " +
-                "projection " +
+                "projection, " +
+                "safe" +
                 ")" +
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement pr = this.con.prepareStatement(query);
@@ -88,6 +91,7 @@ public class RoomDao {
             pr.setBoolean(11, room.isRoom_minibar());
             pr.setBoolean(12, room.isRoom_game_console());
             pr.setBoolean(13, room.isRoom_projection());
+            pr.setBoolean(14, room.isRoom_case_box());
             return pr.executeUpdate() != -1;
         } catch (SQLException e) {
             e.printStackTrace();

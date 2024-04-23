@@ -29,8 +29,8 @@ public class RoomAddView extends Layout {
     private JRadioButton rdb_tv_add;
     private JRadioButton rdb_minibar_add;
     private JRadioButton rdb_game_console_add;
-    private JRadioButton rdb_case_box_add;
     private JRadioButton rdb_projection_add;
+    private JRadioButton rdb_case_box_add;
     private JLabel fld_oda;
     private JTextField fld_adult_add;
     private JTextField fld_child_add;
@@ -99,7 +99,9 @@ public class RoomAddView extends Layout {
                 roomNew.setRoom_television(rdb_tv_add.isSelected());
                 roomNew.setRoom_minibar(rdb_minibar_add.isSelected());
                 roomNew.setRoom_game_console(rdb_game_console_add.isSelected());
+                roomNew.setRoom_case_box(rdb_case_box_add.isSelected());////////
                 roomNew.setRoom_projection(rdb_projection_add.isSelected());
+
 
 
                 // Yeni bir oda ekleniyorsa, odanın bilgileri kaydedilir.
@@ -119,6 +121,8 @@ public class RoomAddView extends Layout {
                 }
 
             }
+
+
         });
 
 
