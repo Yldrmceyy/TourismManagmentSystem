@@ -88,36 +88,37 @@ __*View package:*__    <br> This package includes code related to the user inter
 
 
 ## Example Use Cases
-Adding a New Hotel:
-**1.** Navigate to the main screen and click on the "Add Hotel" button.
-**2.** Fill in the required details for the new hotel.
-**3.** Save the information, and the new hotel will be added to the system.
-**4.** Visit the "Hotel List" tab to view the newly added hotels
+### Adding a New Hotel:
+**1.** Navigate to the main screen and click on the "Add Hotel" button.<br>
+**2.** Fill in the required details for the new hotel.<br>
+**3.** Save the information, and the new hotel will be added to the system.<br>
+**4.** Visit the "Hotel List" tab to view the newly added hotels.<br>
 
-Adding a New Room: 
-**1.** Access the "Add Room" tab within the application.
-**2.** Select the desired hotel to add the room to.
-**3.** Enter the relevant details for the new room, such as room type, availability, and pricing.
-**4.** Save the changes, and the new room will be added to the selected hotel.
+### Adding a New Room: 
+**1.** Access the "Add Room" tab within the application.<br>
+**2.** Select the desired hotel to add the room to.<br>
+**3.** Enter the relevant details for the new room, such as room type, availability, and pricing.<br>
+**4.** Save the changes, and the new room will be added to the selected hotel.<br>
 
 
-Making a Reservation: 
-**1.** Go to the "Make Reservation" tab in the application.
-**2.** Choose the hotel where you want to make the reservation.
-**3.** Select the desired room type and specify the reservation details such as check-in and check-out dates.
-**4.** Confirm the reservation, and it will be successfully made in the system.
+### Making a Reservation: 
+**1.** Go to the "Make Reservation" tab in the application.<br>
+**2.** Choose the hotel where you want to make the reservation.<br>
+**3.** Select the desired room type and specify the reservation details such as check-in and check-out dates.<br>
+**4.** Confirm the reservation, and it will be successfully made in the system.<br>
+<br>
+### User Creation: 
+**1.** Access the "Users" tab within the application.<br>
+**2.** Click on the option to create a new user profile.<br>
+**3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".<br>
+**4.** Save the changes, and the new user will be added to the system with the assigned role.<br>
+<br>
 
-User Creation: 
-**1.** Access the "Users" tab within the application.
-**2.** Click on the option to create a new user profile.
-**3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".
-**4.** Save the changes, and the new user will be added to the system with the assigned role.
-
-Reservation Update/Delete: 
-**1.** Navigate to the "Reservations" tab to view existing reservations.
-**2.** Select the reservation you want to update or delete.
-**3.** Make the necessary modifications to the reservation details or choose to delete it entirely.
-**4.** Save the changes, and the reservation will be updated or removed from the system 
+### Reservation Update/Delete: 
+**1.** Navigate to the "Reservations" tab to view existing reservations.<br>
+**2.** Select the reservation you want to update or delete.<br>
+**3.** Make the necessary modifications to the reservation details or choose to delete it entirely.<br>
+**4.** Save the changes, and the reservation will be updated or removed from the system.<br> 
 
 
 
