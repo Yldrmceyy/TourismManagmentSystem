@@ -89,10 +89,10 @@ __*View package:*__    <br> This package includes code related to the user inter
 
 ## Example Use Cases
 Adding a New Hotel:
-1- Navigate to the main screen and click on the "Add Hotel" button.
-2- Fill in the required details for the new hotel.
-3- Save the information, and the new hotel will be added to the system.
-4-  Visit the "Hotel List" tab to view the newly added hotels
+**1.** Navigate to the main screen and click on the "Add Hotel" button.
+**2.** Fill in the required details for the new hotel.
+**3.** Save the information, and the new hotel will be added to the system.
+**4.** Visit the "Hotel List" tab to view the newly added hotels
 
 Adding a New Room: From the "Add Room" tab, you can add a new room to an existing hotel.
 
