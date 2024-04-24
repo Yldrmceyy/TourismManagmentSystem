@@ -112,7 +112,12 @@ User Creation:
 **2.** Click on the option to create a new user profile.
 **3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".
 **4.** Save the changes, and the new user will be added to the system with the assigned role.
-**5.** Reservation Update/Delete: In the "Reservations" tab, you can view, update, or delete existing reservations.
+
+Reservation Update/Delete: 
+**1.** Navigate to the "Reservations" tab to view existing reservations.
+**2.** Select the reservation you want to update or delete.
+**3.** Make the necessary modifications to the reservation details or choose to delete it entirely.
+**4.** Save the changes, and the reservation will be updated or removed from the system 
 
 
 
