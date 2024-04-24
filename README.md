@@ -63,16 +63,12 @@ __*Core package:*__   <br>   This package includes general utility functions and
 __*View package:*__    <br> This package includes code related to the user interface (UI). It provides data presentation to the user and manages user interaction with the application. For example, screens where users can view tour reservations or make new tour reservations can be found in this package.
 
 
-
-
-
-
 # Features
 
 ## Hotel Management
 - Create, view, edit, and delete hotel entries.
 - Manage hotel information including updates and deletions.
- 
+
 ## Room Management
 - Add, view, edit, and delete room entries within hotels.
 - Control room details such as availability, pricing, and features.
@@ -100,7 +96,6 @@ __*View package:*__    <br> This package includes code related to the user inter
 **3.** Enter the relevant details for the new room, such as room type, availability, and pricing.<br>
 **4.** Save the changes, and the new room will be added to the selected hotel.<br>
 
-
 ### Making a Reservation: 
 **1.** Go to the "Make Reservation" tab in the application.<br>
 **2.** Choose the hotel where you want to make the reservation.<br>
@@ -112,7 +107,7 @@ __*View package:*__    <br> This package includes code related to the user inter
 **2.** Click on the option to create a new user profile.<br>
 **3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".<br>
 **4.** Save the changes, and the new user will be added to the system with the assigned role.<br>
-<br>
+
 
 ### Reservation Update/Delete: 
 **1.** Navigate to the "Reservations" tab to view existing reservations.<br>
