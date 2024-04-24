@@ -107,9 +107,12 @@ Making a Reservation:
 **3.** Select the desired room type and specify the reservation details such as check-in and check-out dates.
 **4.** Confirm the reservation, and it will be successfully made in the system.
 
-User Creation: Create a new user from the "Users" tab and assign either an "admin" or "employee" role to the user.
-
-Reservation Update/Delete: In the "Reservations" tab, you can view, update, or delete existing reservations.
+User Creation: 
+**1.** Access the "Users" tab within the application.
+**2.** Click on the option to create a new user profile.
+**3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".
+**4.** Save the changes, and the new user will be added to the system with the assigned role.
+**5.** Reservation Update/Delete: In the "Reservations" tab, you can view, update, or delete existing reservations.
 
 
 
