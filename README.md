@@ -94,9 +94,18 @@ Adding a New Hotel:
 **3.** Save the information, and the new hotel will be added to the system.
 **4.** Visit the "Hotel List" tab to view the newly added hotels
 
-Adding a New Room: From the "Add Room" tab, you can add a new room to an existing hotel.
+Adding a New Room: 
+**1.** Access the "Add Room" tab within the application.
+**2.** Select the desired hotel to add the room to.
+**3.** Enter the relevant details for the new room, such as room type, availability, and pricing.
+**4.** Save the changes, and the new room will be added to the selected hotel.
 
-Making a Reservation: Choose a suitable hotel from the "Make Reservation" tab to make a reservation.
+
+Making a Reservation: 
+**1.** Go to the "Make Reservation" tab in the application.
+**2.** Choose the hotel where you want to make the reservation.
+**3.** Select the desired room type and specify the reservation details such as check-in and check-out dates.
+**4.** Confirm the reservation, and it will be successfully made in the system.
 
 User Creation: Create a new user from the "Users" tab and assign either an "admin" or "employee" role to the user.
 
