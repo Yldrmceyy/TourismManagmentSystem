@@ -101,13 +101,12 @@ __*View package:*__    <br> This package includes code related to the user inter
 **2.** Choose the hotel where you want to make the reservation.<br>
 **3.** Select the desired room type and specify the reservation details such as check-in and check-out dates.<br>
 **4.** Confirm the reservation, and it will be successfully made in the system.<br>
-<br>
+
 ### User Creation: 
 **1.** Access the "Users" tab within the application.<br>
 **2.** Click on the option to create a new user profile.<br>
 **3.** Enter the user's details and assign an appropriate role, either "admin" or "employee".<br>
 **4.** Save the changes, and the new user will be added to the system with the assigned role.<br>
-
 
 ### Reservation Update/Delete: 
 **1.** Navigate to the "Reservations" tab to view existing reservations.<br>
@@ -116,15 +115,8 @@ __*View package:*__    <br> This package includes code related to the user inter
 **4.** Save the changes, and the reservation will be updated or removed from the system.<br> 
 
 
-
-
-
-
-
-
 ## Project Promotional Video
-[https://www.youtube.com/watch?v=MCWyehN0A_E](https://youtu.be/EmSsMbuue9A)
-
+[https://www.youtube.com/watch?v=MCWyehN0A_E](https://youtu.be/EmSsMbuue9A) 
 
 
 ## Requirements
