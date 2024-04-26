@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-
 // ReservationAddView sınıfı, rezervasyon ekleme ve güncelleme arayüzünü temsil eder ve Layout sınıfından türetilmiştir.
 public class ReservationAddView extends Layout {
 
@@ -57,7 +56,6 @@ public class ReservationAddView extends Layout {
 
     // ReservationAddView sınıfının constructor'ı. Rezervasyon ve oda bilgileri ile başlatılır.
     public ReservationAddView(Reservation reservation, Room room, JFormattedTextField startDate, JFormattedTextField endDate, JTextField adult, JTextField child) {
-        //Reservation reservation = convertRoomToReservation(room);
         this.room = room;
         this.reservation = reservation;
         this.reservationManager = new ReservationManager();
@@ -69,7 +67,6 @@ public class ReservationAddView extends Layout {
         LocalDate to;
         double totalPrice;
 
-        // Rezervasyon ID'si 0 değilse (yani mevcut bir rezervasyon güncelleniyorsa), mevcut rezervasyon bilgileri kullanılır.
         if (this.reservation.getId() != 0) {
             from = this.reservation.getReservation_start_date();
             to = this.reservation.getReservation_end_date();
@@ -80,10 +77,7 @@ public class ReservationAddView extends Layout {
             this.fld_guestMail.setText(this.reservation.getReservation_mail());
             this.fld_guestPhone.setText(String.valueOf(this.reservation.getReservation_phone()));
             totalPrice = this.reservation.getReservation_total_price();
-
         } else {
-
-            // Yeni bir rezervasyon ekleniyorsa, giriş ve çıkış tarihleri, yetişkin ve çocuk sayısı gibi bilgiler kullanılır.
             from = LocalDate.parse(startDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             to = LocalDate.parse(endDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             if (child.getText().isEmpty()) {
@@ -103,7 +97,6 @@ public class ReservationAddView extends Layout {
             totalPrice = (adultPrice * adultCount + childPrice * childCount) * daysBetween;
         }
 
-        // Arayüzdeki bileşenlere otel ve oda bilgileri set edilir.
         this.fld_reservation_hotel_name.setText(room.getHotel().getName());
         this.fld_reservation_address.setText(room.getHotel().getAddress());
         this.fld_reservation_star.setText(room.getHotel().getStar());
@@ -115,7 +108,6 @@ public class ReservationAddView extends Layout {
         this.fld_meter.setText(String.valueOf(room.getRoom_square_meter()));
         this.fld_bedCapacity.setText(String.valueOf(room.getRoom_bed_capacity()));
 
-        // Otel özellikleri için radio button'lar kontrol edilir ve set edilir.
         this.radio_concierge.setSelected(room.getHotel().isConcierge());
         this.radio_carpark.setSelected(room.getHotel().isCar_park());
         this.radio_fitness.setSelected(room.getHotel().isFitness());
@@ -128,52 +120,44 @@ public class ReservationAddView extends Layout {
         this.radio_projection.setSelected(room.isRoom_projection());
         this.radio_minibar.setSelected(room.isRoom_minibar());
 
-
-        // "btn_reservationSve" butonuna ActionListener eklenir.
         btn_reservationSve.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                // Gerekli text alanları kontrol edilir ve gerekli işlemler yapılır.
                 JTextField[] checkFieldList = {fld_guestName, fld_guestID, fld_guestMail, fld_guestPhone, fld_startDate, fld_endDate};
                 if (Helper.isFieldListEmpty(checkFieldList)) {
                     Helper.showMsg("fill");
                 } else {
-                    boolean result = true;
-                    reservation.setReservation_room_id(room.getRoom_id());
-                    reservation.setReservation_guest_name(fld_guestName.getText());
-                    reservation.setReservation_guest_id(Integer.parseInt((String.valueOf(fld_guestID.getText()))));
-                    reservation.setReservation_mail(fld_guestMail.getText());
-                    reservation.setReservation_phone((Integer.parseInt(String.valueOf(fld_guestPhone.getText()))));
-                    reservation.setReservation_start_date(LocalDate.parse(startDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-                    reservation.setReservation_end_date(LocalDate.parse(endDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-                    reservation.setReservation_total_price((int) totalPrice);
-                    reservation.setReservation_guest_number(Integer.parseInt(strGuestNumber));
-
-                    // Rezervasyon ID'si 0 değilse (yani mevcut bir rezervasyon güncelleniyorsa), güncelleme yapılır.
-                    if (reservation.getId() != 0) {
-                        result = reservationManager.update(reservation);
-                        dispose();
+                    int totalGuests = Integer.parseInt(fld_guest_total_person.getText());
+                    if (totalGuests == 0) {
+                        Helper.showMsg("Misafir sayısı en az 1 olmalıdır.");
                     } else {
-
-                        // Yeni bir rezervasyon ekleniyorsa, rezervasyon kaydedilir ve oda stoku güncellenir.
-                        result = reservationManager.save(reservation);
-                        room.setRoom_stock(room.getRoom_stock() - 1);
-                        roomManager.updateStock(room);
-                        dispose();
-
+                        reservation.setReservation_room_id(room.getRoom_id());
+                        reservation.setReservation_guest_name(fld_guestName.getText());
+                        reservation.setReservation_guest_id(Integer.parseInt(fld_guestID.getText()));
+                        reservation.setReservation_mail(fld_guestMail.getText());
+                        reservation.setReservation_phone(Integer.parseInt(fld_guestPhone.getText()));
+                        reservation.setReservation_start_date(LocalDate.parse(startDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                        reservation.setReservation_end_date(LocalDate.parse(endDate.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                        reservation.setReservation_total_price((int) totalPrice);
+                        reservation.setReservation_guest_number(Integer.parseInt(strGuestNumber));
+                        boolean result;
+                        if (reservation.getId() != 0) {
+                            result = reservationManager.update(reservation);
+                            dispose();
+                        } else {
+                            result = reservationManager.save(reservation, totalGuests);
+                            room.setRoom_stock(room.getRoom_stock() - 1);
+                            roomManager.updateStock(room);
+                            dispose();
+                        }
+                        if (result) {
+                            Helper.showMsg("done");
+                        } else {
+                            Helper.showMsg("error");
+                        }
                     }
-                    if (result) {
-                        Helper.showMsg("done");
-
-
-                    } else {
-                        Helper.showMsg("error");
-                    }
-
                 }
             }
         });
     }
-
 }

@@ -77,7 +77,7 @@ public class ReservationManager {
     }
 
     //Yeni bir rezervasyon kaydı oluşturur.
-    public boolean save(Reservation reservation) {
+    public boolean save(Reservation reservation, int totalGuests) {
         if (reservation.getId() != 0) {
             // ID değeri 0 olmayan bir rezervasyonun kaydedilmeye çalışılması hatası.
             Helper.showMsg("error");
